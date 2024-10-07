@@ -1,4 +1,160 @@
 <!DOCTYPE html>
-<div>
-    THIS IS THE START
-</div>
+<html>
+<head>
+  <!-- <link rel="stylesheet" href="css/index.css"> -->
+  <!-- <script type="module" src="src/index.js"></script> -->
+  <meta charset="utf-8">
+  <script type="text/javascript" src="../d3/d3.v7.js"></script>
+  <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+  <!-- <script src="index.js" defer></script> -->
+</head>
+<body>
+    <h1>
+        CSE 332 PROJECT 2 <br>
+        Adam Feng
+    </h1>
+  <div>
+    <label for="cars">Choose a variable:</label>
+    <!-- categorical
+     name
+     gender
+     representation
+     competition
+     lastround
+      -->
+     <!-- numerical
+       completed solves
+       rank
+       last round time
+       last round avg time
+       how many rounds
+       single time
+       avg time
+       number of comp
+       competitors
+       penalties-->
+        <select name="variables" id="variables">
+            <option value="Name">Name</option>
+            <option value="Gender">Gender</option>
+            <option value="Representation">Representation</option>
+            <option value="Competition">Competition</option>
+            <option value="Last Round">Last Round</option>
+            <option value="Rank">Rank</option>
+            <option value="Last Round Single Time">Last Round Single Time</option>
+            <option value="Last Round Average Time">Last Round Average Time</option>
+            <option value="Rounds Competed">Rounds Competed</option>
+            <option value="Best Single Time">Best Single Time</option>
+            <option value="Best Average Time">Best Average Time</option>
+            <option value="Number of Competitions">Number of Competitions</option>
+            <option value="Number of Competitors">Number of Competitors</option>
+            <option value="Number of Penalties">Number of Penalties</option>
+        </select>
+    </div>
+
+    <div id="graph"></div>
+
+    <script>
+        d3.csv("../csvData/dataSet1.csv").then(function(data) {
+            console.log(data);
+            // Set up visualization, scales, etc.
+            updateGraph('Best Single Time');
+
+            d3.select("#variables").on('change', function(){
+                const varName = document.getElementById('variables').value;
+                console.log(varName);
+                updateGraph(varName);
+            });
+
+            function updateGraph(varName){
+                d3.select("#graph").html("");
+    
+                const margin = {top: 30, right: 30, bottom: 70, left: 60},
+                width = 600 - margin.left - margin.right,
+                height = 600 - margin.top - margin.bottom;
+    
+                const svg = d3.select("#graph")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                const counts = new Map();
+                data.forEach(function(d) {
+                    const value = d[varName];
+                    if(counts.has(value)){
+                        counts.set(value, counts.get(value)+ 1);
+                    }
+                    else{
+                        counts.set(value, 1);
+                    }
+                });
+
+                console.log(counts);
+
+                const countsArray = Array.from(counts, function(array){
+                    return {value: array[0], count: array[1]}
+                })
+                countsArray.sort(function(a, b){
+                    return b.count - a.count;
+                });
+
+                const valueArray = Array.from(counts, function(array){
+                    return array[0];
+                });
+
+                const max = Math.max(valueArray);
+                const min = Math.min(valueArray);
+                const binSize = ((max - min)/12);
+                const binValArray = [];
+                for(const x of countsArray){
+                    
+                }
+                console.log(valueArray);
+                console.log(countsArray);
+                
+                const isNumerical = !isNaN(+data[0][varName]);
+                if(isNumerical){
+                    const x = d3.scaleBand()
+                        .range([ 0, width ])
+                        .domain(countsArray.map(function(d) { return d.value; }))
+                        .padding(0.2);
+                        svg.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(x))
+                        .selectAll("text")
+                        .attr("transform", "translate(-10,0)rotate(-45)")
+                        .style("text-anchor", "end");
+                    
+                    // Add Y axis
+                    const y = d3.scaleLinear()
+                        .domain([0, d3.max(countsArray, function(d){
+                            return d.count
+                        })])
+                        .range([ height, 0]);
+                        svg.append("g")
+                        .call(d3.axisLeft(y));
+                    
+                    // Bars
+                    svg.selectAll("bar")
+                        .data(countsArray)
+                        .enter()
+                        .append("rect")
+                        .attr("x", function(d) { return x(d.value); })
+                        .attr("y", function(d) { return y(d.count); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(d.count); })
+                        .attr("fill", "#69b3a2")
+                    
+                    
+                }
+                else{
+                    console.log("NOTHING HAPPENED");
+                }
+            }
+        }).catch(function(error){
+            console.error("Error loading the CSV file: " + error);
+        });
+    </script>
+</body>
+</html>
