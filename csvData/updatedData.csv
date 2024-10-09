@@ -1,4 +1,4 @@
-Name,Gender,Representation,Competition,Last Round,Rank,Last Round Single Time (during competition),Last Round Average Time (during competition),Completed Solves (Total),How many rounds did they compete in,Best Single Time,Best Average Time,How many Competitions have they done?,Competitors,Penalties (DNF)
+Name,Gender,Representation,Competition,Last Round,Rank,Last Round Single Time,Last Round Average Time,Completed Solves,Rounds Competed,Best Single Time,Best Average Time,Number of Competitions,Number of Competitors,Number of Penalties
 Qixian Cao (曹岂娴),Female,China,Xi'an Open 2024,Final,8,5.13,6.6,269,4,4.11,5.42,17,272,0
 Qixian Cao (曹岂娴),Female,China,Hangzhou Spring 2024,Final,10,6.48,6.98,269,3,4.11,5.42,17,155,0
 Qixian Cao (曹岂娴),Female,China,Luoyang Spring 2024,Final,4,4.94,6.29,269,3,4.11,5.42,17,193,0
@@ -284,7 +284,7 @@ Radosław Marcinek,Male,Poland,Dragon Cubing I 2024,Final,2,6.07,6.58,1475,3,4.0
 Radosław Marcinek,Male,Poland,SLS Maj 2024,Final,1,5.06,6.77,1475,2,4.05,5.81,31,48,0
 Radosław Marcinek,Male,Poland,No Triangle in Rzeszów 2024,Final,1,6.19,6.52,1475,3,4.05,5.81,31,92,0
 Radosław Marcinek,Male,Poland,Cube4fun Low Limits Jarosław 2024,Final,1,6.77,7.13,1475,3,4.05,5.81,31,46,0
-Radosław Marcinek,Male,Poland,SLS Kwiecień 2024,Final,1,5.05,,1475,3,4.05,5.81,31,48,0
+Radosław Marcinek,Male,Poland,SLS Kwiecień 2024,Final,1,5.05,7.21,1475,3,4.05,5.81,31,48,0
 Radosław Marcinek,Male,Poland,SLS Marzec 2024,Final,1,6.2,6.78,1475,2,4.05,5.81,31,50,0
 Radosław Marcinek,Male,Poland,Dębica Cubing Winter 2024,Final,1,6.2,6.46,1475,3,4.05,5.81,31,58,0
 Radosław Marcinek,Male,Poland,Rzeszów Open 2024,Final,1,4.7,6.77,1475,2,4.05,5.81,31,46,0
@@ -322,7 +322,7 @@ Sebastian Stone,Male,United States,Bay Area Speedcubin' 59 LIVE - SSF 2024,Final
 Sebastian Stone,Male,United States,Bay Area Speedcubin' 58 - Berkeley 2024,Second Round,19,8.62,10.2,1702,2,4.08,7.96,48,138,0
 Sebastian Stone,Male,United States,Reno Spring 2024,Final,8,8.46,10.07,1702,3,4.08,7.96,48,46,0
 Sebastian Stone,Male,United States,Davis Winter 2024,Final,15,7.84,10.49,1702,4,4.08,7.96,48,127,0
-Sebastian Stone,Male,United States,Berkeley Winter 2024,Second Round,18,7.9,,1702,2,4.08,7.96,48,251,0
+Sebastian Stone,Male,United States,Berkeley Winter 2024,Second Round,18,7.9,9.03,1702,2,4.08,7.96,48,251,0
 Sebastian Stone,Male,United States,SacCubing XVI 2024,Second Round,22,7.25,9.45,1702,2,4.08,7.96,48,146,1
 Sebastian Stone,Male,United States,Bay Area Speedcubin' 55 - San Ramon 2024,Final,15,7.61,10.27,1702,3,4.08,7.96,48,132,1
 Sean Patrick Villanueva,Male,Philippines,A Twisty Day in Araneta 2024,Final,1,5.94,6.59,1970,3,4.11,5.45,62,72,0
@@ -431,7 +431,7 @@ Kyle Santucci,Male,Canada,Rubik's WCA European Championship 2024,Final,5,5.94,6.
 Kyle Santucci,Male,Canada,Rubik's WCA North American Championship 2024,Final,5,5.97,6.2,2114,4,4.26,5.6,57,847,0
 Kyle Santucci,Male,Canada,NA Stadium Series - Edmonton 2024,Final,1,5.54,6.13,2114,2,4.26,5.6,57,118,0
 Kyle Santucci,Male,Canada,Edmonton River Valley Rumble 2024,Final,1,5.9,6.49,2114,2,4.26,5.6,57,63,0
-Kyle Santucci,Male,Canada,The Battlefords: Cubers Strike Back 2024,Final,,,,2114,3,4.26,5.6,57,32,0
+Kyle Santucci,Male,Canada,The Battlefords: Cubers Strike Back 2024,Final,1,5.68,6.19,2114,3,4.26,5.6,57,32,0
 Kyle Santucci,Male,Canada,Mother Earth's Charter Spring 2024,Final,1,5.88,6.43,2114,2,4.26,5.6,57,118,0
 Kyle Santucci,Male,Canada,Richmond Rumble 2024,Final,1,5.6,6.56,2114,3,4.26,5.6,57,81,1
 Kyle Santucci,Male,Canada,New to Sherwood Park 2024,Final,1,5.46,6.25,2114,3,4.26,5.6,57,143,0
